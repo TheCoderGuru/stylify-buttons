@@ -1,6 +1,6 @@
 {
   "name": "@TheCoderGuru/stylify-buttons",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "main": "index.js",
   "scripts": {
     "compile:sass": "sass scss/style.scss dist/style.css",
