@@ -1,0 +1,46 @@
+@mixin button($button-padding-inline: $button-padding-inline){
+    display: inline-block;
+    padding-inline: $button-padding-inline;
+    padding-block: $button-padding-block;
+    font-weight: $button-font-weight;
+}
+
+@mixin color($button-color: white){
+    color: $button-color;
+}
+
+@mixin border($button-border-color: teal, $button-border-thickness: .1em, $button-border-style: solid){
+    border: $button-border-thickness $button-border-style $button-border-color;
+}
+
+@mixin background-color($button-background-color: teal){
+    background-color: $button-background-color;
+}
+
+@mixin border-radius($button-border-radius: .3em){
+    border-radius: $button-border-radius;
+}
+
+@mixin hover-text($hover-text: teal){
+    color: $hover-text;
+}
+
+@mixin hover-background($hover-background: teal){
+    background-color: $hover-background;
+}
+
+@mixin hover-border($hover-border: teal, $button-border-thickness: .1em, $button-border-style: solid){
+    border: $button-border-thickness $button-border-style $hover-border;
+}
+
+@mixin focus-text($focus-text: teal){
+    color: $focus-text;
+}
+
+@mixin focus-background($focus-background: teal){
+    background-color: $focus-background;
+}
+
+@mixin focus-border($focus-border: teal, $button-border-thickness: .1em, $button-border-style: solid){
+    border: $button-border-thickness $button-border-style $focus-border;
+}

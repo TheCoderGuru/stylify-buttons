@@ -1,0 +1,12 @@
+$border-radius: (
+    "none": 0,
+    "default": .3em,
+    "rounded": 2em
+);
+
+@each $key, $value in $border-radius{
+    .border-radius-#{$key}{
+        @include border-radius($button-border-radius: $value)
+    }
+}
+

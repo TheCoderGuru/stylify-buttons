@@ -1,0 +1,13 @@
+$transitions: (
+    "none": none,
+    "100": 100ms background-color ease,
+    "200": 200ms background-color ease,
+    "default": 300ms background-color ease,
+    "400": 400ms background-color ease,
+);
+
+@each $key, $value in $transitions{
+    .transition-#{$key}{
+        transition: $value;
+    }
+}

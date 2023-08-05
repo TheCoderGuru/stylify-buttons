@@ -1,0 +1,29 @@
+{
+  "name": "@TheCoderGuru/stylify-buttons",
+  "version": "1.1.4",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass scss/style.scss dist/style.css",
+    "minify:sass": "css-minify -f ./dist/style.css -o dist/"
+  },
+  "keywords": [
+    "stylify-buttons",
+    "stylify_buttons",
+    "css_stylify",
+    "stylify",
+    "buttons"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css-minify": "^2.0.0",
+    "sass": "^1.64.2"
+  },
+  "description": "style your buttons easier with css-buttons and just focus on your next big project",
+  "repository": {
+    "url": "https://github.com/TheCoderGuru/stylify-buttons"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

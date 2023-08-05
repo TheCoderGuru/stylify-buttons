@@ -1,0 +1,31 @@
+@import 'mixins';
+
+$button-padding-inline: 1.5em;
+$button-padding-block: 0.5em;
+$button-font-weight: 500;
+
+
+$button-sizes: (
+  "medium": $button-padding-inline + 1,
+  "large": $button-padding-inline + 2,
+  "xlarge": $button-padding-inline + 3,
+  "xxlarge": $button-padding-inline + 4,
+);
+
+
+// generic button class
+
+.button {
+  @include button();
+}
+
+.button-outline {
+  @include button();
+}
+
+@each $key, $value in $button-sizes {
+  .button-#{$key} {
+    @include button($button-padding-inline: $value);
+  }
+
+}

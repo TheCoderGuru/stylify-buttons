@@ -1,0 +1,131 @@
+@import 'mixins';
+
+$colors: (
+    "white": #fff,
+    "primary": #626ed4,
+    "secondary": #343549,
+    "success": #2aa39a,
+    "danger": #ec4561,
+    "warning": #f8b425,
+    "info": #38a5f8,
+    "dark": #575c62,
+    "muted": #9a9b9c,
+    "dark-blue": #002060,
+    "orange": orange,
+    "red": red,
+    "blue": blue,
+    "green": green,
+    "black": black,
+    "fuchsia": fuchsia,
+    "none": transparent
+);
+
+
+@each $key, $value in $colors{
+    .color-#{$key}{
+        @include color($value)
+    }
+
+    .border-#{$key}{
+        @include border($button-border-color: $value);
+    }
+
+    .bg-#{$key}{
+        @include background-color($value);
+    }
+
+    .\:hover-bg-#{$key}:hover{
+        @include hover-background($hover-background: $value);
+    }
+
+    .\:hover-text-#{$key}:hover{
+        @include hover-text($hover-text: $value);
+    }
+
+    .\:hover-border-#{$key}:hover{
+        @include hover-border($hover-border: $value);
+    }
+
+    .\:focus-bg-#{$key}:focus{
+        @include focus-background($focus-background: $value);
+    }
+
+    .\:focus-text-#{$key}:focus{
+        @include focus-text($focus-text: $value);
+    }
+
+    .\:focus-border-#{$key}:focus{
+        @include focus-border($focus-border: $value);
+    }
+
+}
+
+@each $key, $value in $colors {
+    @for $i from 1 through 9 {
+        .color-#{$key}-light-#{$i}{
+            color: mix(white, $value, $i * 10%);
+        }
+
+        .border-#{$key}-light-#{$i}{
+            @include border($button-border-color: mix(white, $value, $i * 10%));
+        }
+
+        .\:hover-bg-#{$key}-light-#{$i}:hover{
+            @include hover-background($hover-background: mix(white, $value, $i * 10%));
+        }
+    
+        .\:hover-text-#{$key}-light-#{$i}:hover{
+            @include hover-text($hover-text: mix(white, $value, $i * 10%));
+        }
+    
+        .\:hover-border-#{$key}-light-#{$i}:hover{
+            @include hover-border($hover-border: mix(white, $value, $i * 10%));
+        }
+    }
+
+    @for $i from 1 through 9 {
+        .color-#{$key}-dark-#{$i}{
+            color: mix(black, $value, $i * 10%);
+        }
+
+        .border-#{$key}-dark-#{$i}{
+            @include border($button-border-color: mix(black, $value, $i * 10%));
+        }
+
+        .\:hover-bg-#{$key}-dark-#{$i}:hover{
+            @include hover-background($hover-background: mix(black, $value, $i * 10%));
+        }
+    
+        .\:hover-text-#{$key}-dark-#{$i}:hover{
+            @include hover-text($hover-text: mix(black, $value, $i * 10%));
+        }
+    
+        .\:hover-border-#{$key}-dark-#{$i}:hover{
+            @include hover-border($hover-border: mix(black, $value, $i * 10%));
+        }
+    }
+
+    .color-#{$key}-complement{
+        @include color(complement($value));
+    }
+
+    .border-#{$key}-complement{
+        @include border($button-border-color: complement($value));
+    }
+
+    .bg-#{$key}-complement{
+        @include background-color(complement($value));
+    }
+
+    .\:hover-bg-#{$key}-complement:hover{
+        @include hover-background($hover-background: complement($value));
+    }
+
+    .\:hover-text-#{$key}-complement:hover{
+        @include hover-text($hover-text: complement($value));
+    }
+
+    .\:hover-border-#{$key}-complement:hover{
+        @include hover-border($hover-border: complement($value));
+    }
+}
