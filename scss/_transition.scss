@@ -8,6 +8,11 @@ $transitions: (
 
 @each $key, $value in $transitions{
     .transition-#{$key}{
+        @if($key == "default"){
+            .transition{
+                transition: $value
+            
+        } @else {
         transition: $value;
     }
 }
