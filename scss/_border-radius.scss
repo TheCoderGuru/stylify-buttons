@@ -5,6 +5,9 @@ $border-radius: (
 );
 
 @each $key, $value in $border-radius{
+    @if($key == "default"){
+        border-radius: $value;
+    } @else {
     .border-radius-#{$key}{
         @include border-radius($button-border-radius: $value)
     }
